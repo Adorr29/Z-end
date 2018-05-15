@@ -18,6 +18,6 @@ void IA_b(map_t *map, entity_t *entity, entity_t *my, entity_t *cible)
 		my->x += path.x;
 		my->y += path.y;
 		my->var2++;
-		my->var2 >= 20 ? my->vie = 0 : 0;
+		my->var2 >= 12 ? my->vie = 0 : 0;
 	}
 }
