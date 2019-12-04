@@ -10,24 +10,24 @@
 
 static void IA_B2(map_t *map, entity_t *entity, entity_t *my, entity_t *cible)
 {
-	if (my->var1 >= 50) {
-		sfVector2i path = pathfinding(map, my, cible);
+        if (my->var1 >= 50) {
+                sfVector2i path = pathfinding(map, my, cible);
 
-		my->var1 = 0;
-		if (path.x == 0 && path.y == 0)
-			path = move_rand(map, my);
-		my->x += path.x;
-		my->y += path.y;
-	}
+                my->var1 = 0;
+                if (path.x == 0 && path.y == 0)
+                        path = move_rand(map, my);
+                my->x += path.x;
+                my->y += path.y;
+        }
 }
 
 void IA_B(map_t *map, entity_t *entity, entity_t *my, entity_t *cible)
 {
-	my->var1++;
-	if (abs(my->x - cible->x) + abs(my->y - cible->y) > 10)
-		IA_B2(map, entity, my, cible);
-	else if (my->var1 >= 20) {
-		my->var1 = 0;
-		entity_set_up(entity, my->x, my->y, 'b');
-	}
+        my->var1++;
+        if (abs(my->x - cible->x) + abs(my->y - cible->y) > 10)
+                IA_B2(map, entity, my, cible);
+        else if (my->var1 >= 10) {
+                my->var1 = 0;
+                entity_set_up(entity, my->x, my->y, 'b');
+        }
 }

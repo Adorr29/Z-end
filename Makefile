@@ -49,12 +49,12 @@ CFLAGS	+=	-l c_graph_prog
 all	:	$(NAME)
 
 $(NAME)	:	$(OBJ)
-		cc -o $(NAME) $(OBJ) $(CFLAGS)
+		@cc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean	:
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean	:	clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re	:	fclean all
