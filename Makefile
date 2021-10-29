@@ -44,7 +44,9 @@ SRC	=	$(SRCDIR)main.c \
 OBJ	=	$(SRC:.c=.o)
 
 CFLAGS	+=	-I./include
-CFLAGS	+=	-l c_graph_prog
+CFLAGS	+=	-l csfml-system
+CFLAGS	+=	-l csfml-window
+CFLAGS	+=	-l csfml-graphics
 
 all	:	$(NAME)
 
